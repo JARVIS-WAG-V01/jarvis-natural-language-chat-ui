@@ -10,7 +10,7 @@ overflow:hidden;
 }
 #header{
   font-weight:bold;
-  color:#A90B0B;
+  color:white;
   text-align:center;
   font-size:30px;
   font-family: 'Orbitron', sans-serif;
@@ -20,7 +20,7 @@ background: linear-gradient( #AC4E40,black);
   }
   #description{
 font-family: 'Orbitron', sans-serif;
-   color:#A90B0B;
+   color:#ED7E2A;
    font-size:20px;
 height:100%;
 text-align:center;
