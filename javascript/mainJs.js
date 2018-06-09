@@ -102,6 +102,7 @@ function queryBot(text) {
         }),
 
         success: function(data) {
+
             displayOutput(data.result.fulfillment.displayText);
             insertChat("remote", data.result.fulfillment.speech);
         },
@@ -150,3 +151,50 @@ function displayOutput(input) {
         $("#closeOp").show();
     }
 }
+
+document.getElementById("health").onmouseover = function() {mouseOver1()};
+document.getElementById("health").onmouseout = function() {mouseOut1()};
+
+function mouseOver1() {
+   $("#panel1").show();
+}
+
+function mouseOut1() {
+    $("#panel1").hide();
+}
+
+document.getElementById("check").onmouseover = function() {mouseOver2()};
+document.getElementById("check").onmouseout = function() {mouseOut2()};
+
+function mouseOver2() {
+   $("#panel2").show();
+}
+
+function mouseOut2() {
+    $("#panel2").hide();
+}
+
+document.getElementById("plan").onmouseover = function() {mouseOver3()};
+document.getElementById("plan").onmouseout = function() {mouseOut3()};
+
+function mouseOver3() {
+   $("#panel3").show();
+}
+
+function mouseOut3() {
+    $("#panel3").hide();
+}
+
+
+document.getElementById("verify").onmouseover = function() {mouseOver4()};
+document.getElementById("verify").onmouseout = function() {mouseOut4()};
+
+function mouseOver4() {
+   $("#panel4").show();
+}
+
+function mouseOut4() {
+    $("#panel4").hide();
+}
+
+
