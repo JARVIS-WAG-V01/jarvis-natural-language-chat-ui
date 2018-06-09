@@ -1,66 +1,78 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/maincss.css">
     <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
 </head>
+<body>
 
-<body bgcolor="black">
-    <div id="header"><b>J.A.R.V.I.S</b>
-        <br>[Just a Rather Very Intelligent System]</div>
-    <div id="health">
-        <div class="row">
-            <div class="col-sm-4">
-<ul>
-&#9654; Health Check<br></li>
-&#9654; Troubleshooting<br></li>
-&#9654; Deployment Plan<br></li>
-&#9654; Predictive Analysis</li>
-</ul>
+<div class="title">
+  <h2>J.A.R.V.I.S</h2>
+  <h3>Just a Rather Very Intelligent System</h3>
 </div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="health" class="flip1" onmouseover="mouseOver1()" >&#9654;Health Check</a>
+  <a href="#" id="check" class="flip2" onmouseover="mouseOver2()" >&#9654;Trouble shooting</a>
+  <a href="#" id="plan" class="flip3" onmouseover="mouseOver3()" >&#9654;Deploy Plan</a>
+  <a href="#" id="verify" class="flip4" onmouseover="mouseOver4()" >&#9654;Predict failure</a>
+</div>
+<div class="description">
+        JARVIS a chat assistant to reduce the efforts taken by the team to do routine activities, also it will monitor and perdict failure in system.</div>
+</div>  
+ 
+<div id="panel1">
+  <p>This panel contains a div element, which is hidden by default (display: none).</p>
+  <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+  <p>How it works: Notice that the p element with class="flip" has an onclick attribute attached to it. When the user clicks on the p element, a function called myFunction() is executed, which changes the style of the div with id="panel" from display:none (hidden) to display:block (visible).</p>
+  <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+</div>
+
+<div id="panel2">
+  <p>This panel contains a div element, which is hidden by default (display: none).</p>
+  <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+  <p>How it works: Notice that the p element with class="flip" has an onclick attribute attached to it. When the user clicks on the p element, a function called myFunction() is executed, which changes the style of the div with id="panel" from display:none (hidden) to display:block (visible).</p>
+  <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+</div>
+
+<div id="panel3">
+  <p>This panel contains a div element, which is hidden by default (display: none).</p>
+  <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+  <p>How it works: Notice that the p element with class="flip" has an onclick attribute attached to it. When the user clicks on the p element, a function called myFunction() is executed, which changes the style of the div with id="panel" from display:none (hidden) to display:block (visible).</p>
+  <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+</div>
+
+<div id="panel4">
+  <p>This panel contains a div element, which is hidden by default (display: none).</p>
+  <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+  <p>How it works: Notice that the p element with class="flip" has an onclick attribute attached to it. When the user clicks on the p element, a function called myFunction() is executed, which changes the style of the div with id="panel" from display:none (hidden) to display:block (visible).</p>
+  <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+</div>
+
+  <div class="frame" id="frame">
+   <div class="panel panel-primary" style="z-index: 1000">
+   <div id="chat-panel" class="panel-heading" ><small><i>Chat here with</i></small><br><b>J.A.R.V.I.S</b>
+   </div>
+  </div>
+    <div class="innerframe" style="display:none">
+   <ul id="messages"></ul>
+    <div id="message-box">
+     <div class="msj-rta macro" style="margin:auto">                        
+      <div class="text text-l" >
+       <input class="mytext" placeholder="Type a message"/>
+      </div> 
      </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-        </div>
     </div>
-    <div id="description">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-5">JARVIS a chat assistant to reduce the efforts taken by the team to do routine activities, also it will monitor the system and predict the events which makes the system down.</div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div id="plan">
-        <div class="row">
-            <div class="col-sm-4">
-                <br></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <br></div>
-        </div>
-    </div>
-    <div class="frame" id="frame">
-        <div class="panel panel-primary" style="z-index: 1000">
-            <div id="chat-panel" class="panel-heading"><small></small>
-                <b>Chat here with <br>JARVIS</b>
-            </div>
-        </div>
-        <div class="innerframe" style="display:none">
-            <ul id="messages"></ul>
-            <div id="message-box">
-                <div class="msj-rta macro" style="margin:auto">
-                    <div class="text text-l">
-                        <input class="mytext" placeholder="Type a message" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   </div>
+  </div>
+<div id="include">
+	<object type="text/html" id="myData" width="850px" height="650px" style="border:none">
+</div>
+
+
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="javascript/mainJs.js"></script>
+<script type="text/javascript" src="D:\Rakesh_Hackathon\sample\html\javascript\mainJs.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-</html>
+</html> 
