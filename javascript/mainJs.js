@@ -137,7 +137,7 @@ function queryDpBot(action,text) {
         error: function() {
             insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
         }
-    });
+    });}
 }
 
 function generateUUID() { // Public Domain/MIT
