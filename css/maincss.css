@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Economica|Orbitron:900|Teko:300');
+body{
+font-family: "Orbitron";
+font-size:15px;
+background:url('https://www.setaswall.com/wp-content/uploads/2017/12/Computer-Tech-Wallpaper-28-1920x1080-768x432.jpg');
+background-repeat: repeat;
+background-size:cover;
+//background-position: 0 -10vw;
+overflow:hidden; 
+}
+#header{
+  font-weight:bold;
+  color:#A90B0B;
+  text-align:center;
+  font-size:30px;
+  font-family: 'Orbitron', sans-serif;
+
+background: linear-gradient( #AC4E40,black);
+
+  }
+  #description{
+font-family: 'Orbitron', sans-serif;
+   color:#A90B0B;
+   font-size:20px;
+height:100%;
+text-align:center;
+margin-left:8%;
+
+  }
+  #chatbox
+  {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding:50px;
+  text-align:center;
+  color:white;
+  }
+ 
+#chat-panel{
+text-align:center;
+bottom: 0;
+left: 0;
+}
+.panel-heading{
+    cursor: pointer;
+    padding:10px;
+    background:#A90B0B;
+    bottom: 0;
+    left: 0;
+    
+}
+.mytext{
+	color:white;border:0;padding:10px;background:#001010;text-align:right;
+}
+.text{
+    width:100%;display:flex;flex-direction:column;
+}
+.text > p:first-of-type{
+    width:100%;margin-top:5px;margin-bottom:auto;line-height: 15px;font-size: 15px;
+}
+.text > p:last-of-type{
+    width:100%;text-align:left;color:black;margin-bottom:-7px;margin-top:auto;text-align:right;
+}
+.text-l{
+    float:right;padding-right:10px;
+}        
+.text-r{
+    float:right;padding-left:10px;
+}
+.macro{
+   color:white;margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+}
+.msj-rta{
+    float:right;background:#001111;text-align:right;
+}
+
+.frame{
+    z-index:10000;
+    background:#000000;
+    overflow:hidden;
+    padding:0;
+    position:fixed;
+    right:40px;
+    bottom:40px;
+    font-size:15px;
+    width:175px;
+    border-color: #337ab7 #337ab7 #337ab7 #337ab7;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 0px 15px 15px 15px;
+    border-style:5px solid ;
+}
+.panel-primary {
+    background:#A90B0B;
+    height: 40px;
+background:red;
+}
+.panel-heading{
+    cursor: pointer;
+    padding:10px;
+    background:#A90B0B;
+}
+#chat-panel{
+text-align:center;
+}
+.panel-heading{
+    cursor: pointer;
+    padding:10px;
+    background:red;
+}
+.innerframe{
+margin-top:20px;
+z-index:1;
+background:black;
+    height:450px;
+    opacity:'0';
+}
+.innerframe > div:last-of-type{
+position:absolute;
+bottom:10px;
+width:100%;
+display:flex;
+}
+#messages {
+    margin-top: 20px;
+    width:100%;
+    list-style-type: none;
+    padding:18px;
+    position:absolute;
+    top:40px;
+    bottom:50px;
+    display:flex;
+    flex-direction: column;
+    overflow-y:scroll;
+    height: 370px;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #A90B0B;
+    border-color: #A90B0B;
+}
+.frame {
+    z-index: 10000;
+    background: #000000;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    font-size: 15px;
+    width: 175px;
+    border-color: #A90B0B;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 0px 15px 15px 15px;
+    border-style: 5px solid;
+}
+
+.panel-primary {
+    border-color: #A90B0B;
+}
+
+.col-sm-5 {
+    width: 33%;
+top:10vh;
+left:56vh;
+}
+.col-sm-4 {
+    width: 33%;
+top:15vh;
+left:5vh;
+font-size:4vh;
+color:#A90B0B;
+border-color: #A90B0B;
+}
+ul{
+ list-style:square;
+}
