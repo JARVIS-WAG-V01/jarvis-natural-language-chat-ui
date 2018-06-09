@@ -103,7 +103,7 @@ function queryBot(text) {
         }),
 
         success: function(data) {
-
+            queryDpBot(data.result.action,'Hi')
             displayOutput(data.result.fulfillment.displayText);
             insertChat("remote", data.result.fulfillment.speech);
         },
@@ -113,8 +113,10 @@ function queryBot(text) {
     });
 }
 
-function queryDpBot(text) {
-    $.ajax({
+function queryDpBot(action,text) {
+    if(action=="contact.ULTRON")
+    {
+        $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
         contentType: "application/json; charset=utf-8",
@@ -130,8 +132,7 @@ function queryDpBot(text) {
 
         success: function(data) {
 
-            displayDpOutput(data.result.action,'Hi');
-            insertChat("remote", data.result.fulfillment.speech);
+            insertChat("dp", data.result.fulfillment.speech);
         },
         error: function() {
             insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
@@ -178,17 +179,6 @@ function displayOutput(input) {
         $("#closeOp").show();
     }
 }
-
-function displayOutput(input) {
-    if (input === 'dp') {
-        document.getElementById("myData").setAttribute('data', url);
-        //document.getElementById("myData").setAttribute('data','https://nwave-ideabot-flask-webhook-p.herokuapp.com/getop/TESTINPUT1');
-        $("#myData").show();
-        $("#myHref").hide();
-        $("#closeOp").show();
-    }
-}
-
 
 document.getElementById("health").onmouseover = function() {mouseOver1()};
 document.getElementById("health").onmouseout = function() {mouseOut1()};
