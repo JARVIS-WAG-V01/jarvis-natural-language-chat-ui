@@ -3,6 +3,7 @@ var local = {};
 var remote = {};
 var SESSIONID = generateUUID();
 var accessToken = "9be02fefb0f34c95ac896fe92c0614ca";
+var dpaccessToken = "c525ea6281f74869830f778993746caa";
 var baseUrl = "https://api.api.ai/v1/";
 var Opurl = "https://nwave-output-v1.herokuapp.com/getop/";
 var url = Opurl + SESSIONID;
@@ -112,6 +113,32 @@ function queryBot(text) {
     });
 }
 
+function queryDpBot(text) {
+    $.ajax({
+        type: "POST",
+        url: baseUrl + "query?v=20150910",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + dpaccessToken
+        },
+        data: JSON.stringify({
+            query: text,
+            lang: "en",
+            sessionId: SESSIONID
+        }),
+
+        success: function(data) {
+
+            displayDpOutput(data.result.action,'Hi');
+            insertChat("remote", data.result.fulfillment.speech);
+        },
+        error: function() {
+            insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
+        }
+    });
+}
+
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();
     if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
@@ -151,6 +178,17 @@ function displayOutput(input) {
         $("#closeOp").show();
     }
 }
+
+function displayOutput(input) {
+    if (input === 'dp') {
+        document.getElementById("myData").setAttribute('data', url);
+        //document.getElementById("myData").setAttribute('data','https://nwave-ideabot-flask-webhook-p.herokuapp.com/getop/TESTINPUT1');
+        $("#myData").show();
+        $("#myHref").hide();
+        $("#closeOp").show();
+    }
+}
+
 
 document.getElementById("health").onmouseover = function() {mouseOver1()};
 document.getElementById("health").onmouseout = function() {mouseOut1()};
