@@ -131,7 +131,7 @@ function queryDpBot(action,text) {
         }),
 
         success: function(data) {
-
+            queryBot(data.result.fulfillment.speech)
             insertChat("dp", data.result.fulfillment.speech);
         },
         error: function() {
