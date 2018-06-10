@@ -36,8 +36,8 @@ function insertChat(who, text) {
     else if (who =="others") {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
-            '<div class="text text-l">' +
-            '<p class="msj macrodp">' + text + '</p>' +
+            '<div class="textdp">' +
+            '<p class ="macrodp">' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
@@ -235,5 +235,4 @@ function mouseOver4() {
 function mouseOut4() {
     $("#panel4").hide();
 }
-
 
