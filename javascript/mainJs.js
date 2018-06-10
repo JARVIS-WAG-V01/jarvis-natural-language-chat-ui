@@ -35,9 +35,9 @@ function insertChat(who, text) {
     }
     else if (who =="others") {
         control = '<li style="width:100%;align:right;">' +
-            '<div class="msj macrodp">' +
+            '<div class="msj macro">' +
             '<div class="text text-l">' +
-            '<p>' + text + '</p>' +
+            '<p class="msj macrodp">' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
