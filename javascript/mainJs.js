@@ -32,7 +32,18 @@ function insertChat(who, text) {
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</li>';
-    } else {
+    }
+    else if (who =="others") {
+        control = '<li style="width:100%;align:right;">' +
+            '<div class="msj macrodp">' +
+            '<div class="text text-l">' +
+            '<p>' + text + '</p>' +
+            '<p><small>' + date + '</small></p>' +
+            '</div>' +
+            '</div>' +
+            '</li>';
+    }
+    else {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
             '<div class="text text-l">' +
@@ -132,7 +143,7 @@ function queryDpBot(action,text) {
 
         success: function(data) {
             queryBot(data.result.fulfillment.speech)
-            insertChat("dp", data.result.fulfillment.speech);
+            insertChat("others", data.result.fulfillment.speech);
         },
         error: function() {
             insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
