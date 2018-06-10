@@ -38,8 +38,14 @@ color:white;
     margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
 }
 
-.macrodp{
-    margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;background:skyblue;
+.macrodp {
+    margin-top: 5px;
+    width: 85%;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    background: skyblue;
+    color: black;
 }
 .msj-rta{
     float:right;background:#001111;text-align:right;
@@ -263,4 +269,3 @@ text-align:center;
 html, body{
     height: 100%;
 }
-
