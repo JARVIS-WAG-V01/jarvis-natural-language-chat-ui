@@ -103,7 +103,7 @@ function queryBot(text) {
         }),
 
         success: function(data) {
-            queryDpBot(data.result.action,'Hi')
+            queryDpBot(data.result.action,data.result.fulfillment.speech)
             displayOutput(data.result.fulfillment.displayText);
             insertChat("remote", data.result.fulfillment.speech);
         },
