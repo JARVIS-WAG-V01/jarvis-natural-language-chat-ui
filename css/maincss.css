@@ -173,7 +173,7 @@ margin-top: 0;
     overflow:hidden;
     padding:0;
     position:fixed;
-    right:40px;
+    right:120px;
     bottom:40px;
     font-size:15px;
     width:175px;
@@ -268,4 +268,30 @@ text-align:center;
 
 html, body{
     height: 100%;
+}
+
+#nav h {
+    position: absolute;
+    right: -70px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#nav h:hover {
+    right: 0;
+}
+
+#wsrr {
+    top: 25%;
+    background-color: #4CAF50;
+}
+
+#was {
+    top: 60%;
+    background-color: #2196F3;
 }
