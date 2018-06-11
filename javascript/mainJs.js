@@ -60,7 +60,7 @@
   <p><li>Provide the server name  <br> Eg., DONEMQ1, TONEMB1</p>
   <p><li>Provide the change type <br> Eg., Validation, Change in server </p>
   <p><li>JARVIS will provide the Deployment plan to download, review</p>
-  <p><li>Once verified mail will be sent to 3L for approval.</p>
+  <p><li>Once verified mail will be sent for approval.</p>
 </div>
 
 <div id="panel4">
