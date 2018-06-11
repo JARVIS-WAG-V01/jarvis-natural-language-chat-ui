@@ -1,237 +1,100 @@
-var local = {};
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/maincss.css">
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+</head>
+<body>
 
-var remote = {};
-var SESSIONID = generateUUID();
-var accessToken = "9be02fefb0f34c95ac896fe92c0614ca";
-var dpaccessToken = "c525ea6281f74869830f778993746caa";
-var baseUrl = "https://api.api.ai/v1/";
-var Opurl = "https://nwave-output-v1.herokuapp.com/getop/";
-var url = Opurl + SESSIONID;
+<div class="title">
+  <h2>J.A.R.V.I.S</h2>
+  <h3>Just a Rather Very Intelligent System</h3>
+</div>
 
-function formatTime(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-}
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="health" class="flip1" onmouseover="mouseOver1()" >&#9654;Health Check</a>
+  <a href="#" id="check" class="flip2" onmouseover="mouseOver2()" >&#9654;Trouble shooting</a>
+  <a href="#" id="plan" class="flip3" onmouseover="mouseOver3()" >&#9654;Deploy Plan</a>
+  <a href="#" id="verify" class="flip4" onmouseover="mouseOver4()" >&#9654;Predict failure</a>
+</div>
 
-function insertChat(who, text) {
-    var control = "";
-    var date = formatTime(new Date());
+<div id="nav" class="nav">
+  <h id="wsrr">
+	<h1><li>WSRR</h1>
+	<a href="www.google.com"><li>Dev</a>
+	<a href="www.google.com"><li>Test</a>
+	<a href="www.google.com"><li>Uat</a>
+	<a href="www.google.com"><li>Prod</a>
+</h>
+</div>
+<div id="nav" class="nav">
+  <h id="was">
+	<h1><li>WAS</h1>
+	<a href="www.google.com"><li>Dev</a>
+	<a href="www.google.com"><li>Test</a>
+	<a href="www.google.com"><li>Uat</a>
+	<a href="www.google.com"><li>Prod</a>
+</h>
+</div>
 
-    if (who == "local") {
+<div class="description">
+        JARVIS a chat assistant to reduce the efforts taken by the team to do routine activities, also it will monitor and perdict failure in system.</div>
+</div>  
+ 
+<div id="panel1">
+  <p><li>Health check <br>Eg., Perform Health check, Do Health check</p>
+  <p><li>Provide Server Name <br> Eg., DONEMQ1, TONEMB1</p>
+  <p><li>JARVIS will provide the brief health check report.<p>
+</div>
 
-        control = '<li style="width:100%;float:right;">' +
-            '<div class="msj-rta macro">' +
-            '<div class="text text-r">' +
-            '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
-            '</div>' +
-            '</li>';
-    }
-    else if (who =="others") {
-        control = '<li style="width:100%;align:right;">' +
-            '<div class="msj macro">' +
-            '<div class="textdp">' +
-            '<p class ="macrodp">' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
-            '</div>' +
-            '</div>' +
-            '</li>';
-    }
-    else {
-        control = '<li style="width:100%;align:right;">' +
-            '<div class="msj macro">' +
-            '<div class="text text-l">' +
-            '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
-            '</div>' +
-            '</div>' +
-            '</li>';
-    }
-    $("#messages").append(control);
-    var objDiv = document.getElementById("messages");
-    objDiv.scrollTop = objDiv.scrollHeight;
-}
+<div id="panel2">
+  <p><li>TroubleShooting <br> Eg., Not able to reach MQ, DESB_BR1 down</p>
+  <p><li>Provide the server name</p>
+  <p><li>Provide the issue statement</p>
+  <p><li>JARVIS will provide the resolution for the incident.</p>
+</div>
 
-$("#chat-panel").on('click', function() {
-    var framewidth = $("#frame").width();
-    var op = "";
-    if (framewidth > 200) {
-        framewidth = "175";
-        op = "0.1";
+<div id="panel3">
+  <p><li>Deployment Plan <br> Eg., Prepare Deployment plan, Prepare info needed</p>
+  <p><li>Provide the server name  <br> Eg., DONEMQ1, TONEMB1</p>
+  <p><li>Provide the change type <br> Eg., Validation, Change in server </p>
+  <p><li>JARVIS will provide the Deployment plan to download, review</p>
+  <p><li>Once verified mail will be sent to 3L for approval.</p>
+</div>
 
-    } else {
-        framewidth = "370";
-        op = "1";
+<div id="panel4">
+  <p><li>Check with JARVIS for any issue in environment.</p>
+  <p><li>Eg., Do you feel anythink wrong</p>
+  <p><li>JARVIS will Predict with the data and provide the abnormolities observed in environment</p>
+</div>
 
-    }
-    $(".innerframe").animate({
-        height: 'toggle',
-        opacity: op
-    });
-    $('#frame').animate({
-        width: framewidth,
-        background: "black"
-    });
-});
-
-function resetChat() {
-    $("#messages").empty();
-}
-
-
-$(".mytext").on("keyup", function(e) {
-    if (e.which == 13) {
-        var text = $(this).val();
-        if (text !== "") {
-            insertChat("local", text);
-            $(this).val('');
-            queryBot(text)
-        }
-    }
-});
-
-resetChat();
-
-function queryBot(text) {
-    $.ajax({
-        type: "POST",
-        url: baseUrl + "query?v=20150910",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            "Authorization": "Bearer " + accessToken
-        },
-        data: JSON.stringify({
-            query: text,
-            lang: "en",
-            sessionId: SESSIONID
-        }),
-
-        success: function(data) {
-            queryDpBot(data.result.action,data.result.fulfillment.speech)
-            displayOutput(data.result.fulfillment.displayText);
-            insertChat("remote", data.result.fulfillment.speech);
-        },
-        error: function() {
-            insertChat("remote", "Sorry Jarvis has faced some issues! Please try again later");
-        }
-    });
-}
-
-function queryDpBot(action,text) {
-    if(action=="contact.ULTRON")
-    {
-        $.ajax({
-        type: "POST",
-        url: baseUrl + "query?v=20150910",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            "Authorization": "Bearer " + dpaccessToken
-        },
-        data: JSON.stringify({
-            query: text,
-            lang: "en",
-            sessionId: SESSIONID
-        }),
-
-        success: function(data) {
-            queryBot(data.result.fulfillment.speech)
-            insertChat("others", data.result.fulfillment.speech);
-        },
-        error: function() {
-            insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
-        }
-    });}
-}
-
-function generateUUID() { // Public Domain/MIT
-    var d = new Date().getTime();
-    if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
-        d += performance.now(); //use high-precision timer if available
-    }
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-}
-
-$(document).ready(function() {
-    $("#myHref").click(function(event) {
-        document.getElementById("myData").setAttribute('data', url);
-        //document.getElementById("myData").setAttribute('data','file:///D:/Guna/POCs/ML/nwave-UI/output.html');
-        $("#myData").show();
-        $("#myHref").hide();
-        $("#closeOp").show();
-        return false;
-    });
-});
-$("#closeOp").click(function() {
-    $("#loading").hide();
-    document.getElementById("myData").setAttribute('data', "");
-    $("#closeOp").hide();
-    $("#myData").hide();
-    $("#myHref").show();
-});
-
-function displayOutput(input) {
-    if (input === 'LOAD-PAGE') {
-        document.getElementById("myData").setAttribute('data', url);
-        //document.getElementById("myData").setAttribute('data','https://nwave-ideabot-flask-webhook-p.herokuapp.com/getop/TESTINPUT1');
-        $("#myData").show();
-        $("#myHref").hide();
-        $("#closeOp").show();
-    }
-}
-
-document.getElementById("health").onmouseover = function() {mouseOver1()};
-document.getElementById("health").onmouseout = function() {mouseOut1()};
-
-function mouseOver1() {
-   $("#panel1").show();
-}
-
-function mouseOut1() {
-    $("#panel1").hide();
-}
-
-document.getElementById("check").onmouseover = function() {mouseOver2()};
-document.getElementById("check").onmouseout = function() {mouseOut2()};
-
-function mouseOver2() {
-   $("#panel2").show();
-}
-
-function mouseOut2() {
-    $("#panel2").hide();
-}
-
-document.getElementById("plan").onmouseover = function() {mouseOver3()};
-document.getElementById("plan").onmouseout = function() {mouseOut3()};
-
-function mouseOver3() {
-   $("#panel3").show();
-}
-
-function mouseOut3() {
-    $("#panel3").hide();
-}
+  <div class="frame" id="frame">
+   <div class="panel panel-primary" style="z-index: 1000">
+   <div id="chat-panel" class="panel-heading" ><small><i>Chat here with</i></small><br><b>J.A.R.V.I.S</b>
+   </div>
+  </div>
+    <div class="innerframe" style="display:none">
+   <ul id="messages"></ul>
+    <div id="message-box">
+     <div class="msj-rta macro" style="margin:auto">                        
+      <div class="text text-l" >
+       <input class="mytext" placeholder="Type a message"/>
+      </div> 
+     </div>
+    </div>
+   </div>
+  </div>
 
 
-document.getElementById("verify").onmouseover = function() {mouseOver4()};
-document.getElementById("verify").onmouseout = function() {mouseOut4()};
+<div id="include">
+	<object type="text/html" id="myData" width="850px" height="650px" style="border:none">
+</div>
 
-function mouseOver4() {
-   $("#panel4").show();
-}
 
-function mouseOut4() {
-    $("#panel4").hide();
-}
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="javascript/mainJs.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html> 
