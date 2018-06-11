@@ -124,7 +124,7 @@ function queryBot(text) {
     });
 }
 
-function queryDpBot((action,text) {
+function queryDpBot(action,text) {
     if(action=="contact.ULTRON")
     {
         $.ajax({
@@ -149,7 +149,7 @@ function queryDpBot((action,text) {
             insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
         }
     });}
-},3000}
+}
 
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();
@@ -235,4 +235,3 @@ function mouseOver4() {
 function mouseOut4() {
     $("#panel4").hide();
 }
-
