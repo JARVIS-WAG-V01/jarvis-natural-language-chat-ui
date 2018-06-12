@@ -124,7 +124,7 @@ function queryBot(text) {
     });
 }
 
-function queryDpBot((action,text) {
+function queryDpBot(action,text) {
     if(action=="contact.ULTRON")
     {
         $.ajax({
