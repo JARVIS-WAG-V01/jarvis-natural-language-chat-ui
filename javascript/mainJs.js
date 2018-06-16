@@ -32,6 +32,7 @@ function formatTime(date) {
                 text += event.results[i][0].transcript;
             }
             insertChat("local", text);
+            queryBot(text);
             stopRecognition();
         };
         recognition.onend = function() {
