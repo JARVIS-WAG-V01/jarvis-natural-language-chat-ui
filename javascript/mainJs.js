@@ -18,10 +18,8 @@ function formatTime(date) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }
-$("#rec").click(function(event) {
-            switchRecognition();
-        });
-    });
+
+   
     var recognition;
     function startRecognition() {
         recognition = new webkitSpeechRecognition();
@@ -134,6 +132,9 @@ $(".mytext").on("keyup", function(e) {
             queryBot(text)
         }
     }
+    $("#rec").click(function(event) {
+            switchRecognition();
+        });
     setResponse("Thinking...");
 });
 
