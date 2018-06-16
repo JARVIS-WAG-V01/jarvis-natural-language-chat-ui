@@ -31,7 +31,7 @@ function formatTime(date) {
             for (var i = event.resultIndex; i < event.results.length; ++i) {
                 text += event.results[i][0].transcript;
             }
-            setInput(text);
+            insertChat("local", text);
             stopRecognition();
         };
         recognition.onend = function() {
@@ -135,7 +135,7 @@ $(".mytext").on("keyup", function(e) {
     $("#rec").click(function(event) {
             switchRecognition();
         });
-    setResponse("Thinking...");
+     insertChat("local", "Thinking...");
 });
 
 resetChat();
