@@ -135,7 +135,7 @@ $(".mytext").on("keyup", function(e) {
     $("#rec").click(function(event) {
             switchRecognition();
         });
-     insertChat("local", "Thinking...");
+     
 });
 
 resetChat();
