@@ -117,6 +117,8 @@ function queryBot(text) {
             queryDpBot(data.result.action,data.result.fulfillment.speech)
             displayOutput(data.result.fulfillment.displayText);
             insertChat("remote", data.result.fulfillment.speech);
+            var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
+            window.speechSynthesis.speak(msg);
         },
         error: function() {
             insertChat("remote", "Sorry Jarvis has faced some issues! Please try again later");
