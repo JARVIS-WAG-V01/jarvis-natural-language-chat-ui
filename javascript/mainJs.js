@@ -94,6 +94,7 @@ $(".mytext").on("keyup", function(e) {
             queryBot(text)
         }
     }
+    setResponse("Thinking...");
 });
 
 resetChat();
