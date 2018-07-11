@@ -192,6 +192,7 @@ function queryDpBot(action,text) {
         },
         error: function() {
             insertChat("remote", "Sorry ULTRON has faced some issues! Please try again later");
+            setTimeout('', 2000);
         }
     });
 }}
