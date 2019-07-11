@@ -2,7 +2,7 @@ var local = {};
 
 var remote = {};
 var SESSIONID = generateUUID();
-var accessToken = "9be02fefb0f34c95ac896fe92c0614ca";
+var accessToken = "e9e8ba482ba44deb89fcbbb5dccc6dda";
 var dpaccessToken = "c525ea6281f74869830f778993746caa";
 var baseUrl = "https://api.api.ai/v1/";
 var Opurl = "https://nwave-output-v1.herokuapp.com/getop/";
